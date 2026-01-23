@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacheteBath | Contact</title>
+    <style>
+        body { background: #050505; color: #f0f0f0; font-family: 'Courier New', Courier, monospace; line-height: 1.6; margin: 0; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px 20px 60px 20px; }
+        
+        /* Navigation */
+        nav { display: flex; justify-content: flex-end; gap: 20px; padding: 20px 0; border-bottom: 1px solid #222; margin-bottom: 40px; }
+        nav a { color: #888; text-decoration: none; text-transform: uppercase; font-size: 0.9em; letter-spacing: 2px; transition: 0.3s; }
+        nav a:hover, nav a.active { color: #00ffcc; }
+
+        /* Typography */
+        h1 { font-size: 3em; letter-spacing: 8px; text-transform: uppercase; color: #00ffcc; text-shadow: 0 0 10px #00ffcc55; margin: 0; }
+        .subtitle { font-size: 1.1em; color: #888; margin-bottom: 40px; border-left: 3px solid #00ffcc; padding-left: 15px; text-transform: uppercase; }
+
+        /* Contact Section */
+        .contact-box { background: #111; border: 1px solid #333; padding: 40px; border-radius: 8px; text-align: center; margin-top: 50px; }
+        .contact-box p { font-size: 1.2em; color: #ccc; margin-bottom: 20px; }
+        
+        /* The Clickable Email Link */
+        .email-link { 
+            font-size: 1.5em; 
+            color: #00ffcc; 
+            text-decoration: none; 
+            border: 1px solid #00ffcc; 
+            padding: 15px 30px; 
+            display: inline-block; 
+            border-radius: 4px; 
+            transition: 0.3s;
+            letter-spacing: 1px;
+        }
+        .email-link:hover { background: #00ffcc; color: #050505; transform: scale(1.05); }
+
+        footer { margin-top: 80px; font-size: 0.8em; color: #444; border-top: 1px solid #222; padding-top: 20px; text-align: center; }
+        .footer-nav { margin-bottom: 20px; }
+        .footer-nav a { color: #444; text-decoration: none; margin: 0 10px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html">Music</a>
+            <a href="models.html">3D Models</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+
+        <header>
+            <h1>Contact</h1>
+            <div class="subtitle">Booking | Collaborations | Tech Inquiries</div>
+        </header>
+
+        <div class="contact-box">
+            <p>For modular synth inquiries, remix requests, or technical collaborations, reach out via email:</p>
+            
+            <a href="mailto:machetebath@gmail.com" class="email-link">machetebath@gmail.com</a>
+        </div>
+
+        <footer>
+            <div class="footer-nav">
+                <a href="index.html">Music</a>
+                <a href="models.html">3D Models</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p>© 2026 MacheteBath. All hardware-focused sounds.</p>
+        </footer>
+    </div>
+</body>
+</html>

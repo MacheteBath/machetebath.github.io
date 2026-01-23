@@ -6,23 +6,30 @@
     <title>MacheteBath | Official Artist Page</title>
     <style>
         body { background: #050505; color: #f0f0f0; font-family: 'Courier New', Courier, monospace; line-height: 1.6; margin: 0; }
-        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px 20px 60px 20px; }
         
+        /* Navigation Bar */
+        nav { display: flex; justify-content: flex-end; gap: 20px; padding: 20px 0; border-bottom: 1px solid #222; margin-bottom: 40px; }
+        nav a { color: #888; text-decoration: none; text-transform: uppercase; font-size: 0.9em; letter-spacing: 2px; transition: 0.3s; }
+        nav a:hover, nav a.active { color: #00ffcc; }
+
         /* Neon Accents */
         h1 { font-size: 3em; letter-spacing: 8px; text-transform: uppercase; color: #00ffcc; text-shadow: 0 0 10px #00ffcc55; margin: 0; }
         .subtitle { font-size: 1.1em; color: #888; margin-bottom: 40px; border-left: 3px solid #00ffcc; padding-left: 15px; text-transform: uppercase; }
+
+        /* Promo Section */
+        .promo-section { background: linear-gradient(45deg, #111, #002211); border: 2px solid #00ffcc; padding: 30px; margin: 40px 0; border-radius: 8px; text-align: center; box-shadow: 0 0 20px rgba(0, 255, 204, 0.2); }
+        .promo-date { color: #00ffcc; font-weight: bold; letter-spacing: 3px; margin-bottom: 10px; }
+        .promo-title { font-size: 2em; margin: 10px 0; color: #fff; }
 
         /* Bio Section */
         .bio-container { display: flex; gap: 30px; align-items: flex-start; margin-bottom: 50px; flex-wrap: wrap; }
         .bio-image { width: 250px; height: 250px; background: #111; border: 1px solid #333; border-radius: 4px; object-fit: cover; }
         .bio-text { flex: 1; min-width: 300px; font-size: 1.1em; color: #ccc; }
 
-        /* Links/Streaming Section */
+        /* Links Grid */
         .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 40px 0; }
-        .link-card { 
-            background: #111; border: 1px solid #333; padding: 15px; text-align: center; 
-            border-radius: 4px; transition: 0.3s; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;
-        }
+        .link-card { background: #111; border: 1px solid #333; padding: 15px; text-align: center; border-radius: 4px; transition: 0.3s; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
         .link-card:hover { border-color: #00ffcc; background: #1a1a1a; transform: translateY(-3px); }
         .link-card a { color: #00ffcc; text-decoration: none; display: block; width: 100%; }
 
@@ -30,67 +37,46 @@
         .music-section { background: #111; padding: 20px; border: 1px solid #333; border-radius: 4px; }
         .sc-player { margin-top: 20px; border-radius: 8px; overflow: hidden; border: 1px solid #222; }
 
+        /* Footer Menu */
         footer { margin-top: 80px; font-size: 0.8em; color: #444; border-top: 1px solid #222; padding-top: 20px; text-align: center; }
+        .footer-nav { margin-bottom: 20px; }
+        .footer-nav a { color: #444; text-decoration: none; margin: 0 10px; text-transform: uppercase; }
+        .footer-nav a:hover { color: #888; }
     </style>
 </head>
 <body>
     <div class="container">
+        <nav>
+            <a href="index.html" class="active">Music</a>
+            <a href="models.html">3D Models</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
         <header>
             <h1>MacheteBath</h1>
             <div class="subtitle">Modular Techno | Electronic Music Producer | Canada</div>
         </header>
-<style>
-    /* New Promo Styles */
-    .promo-section {
-        background: linear-gradient(45deg, #111, #002211);
-        border: 2px solid #00ffcc;
-        padding: 30px;
-        margin: 40px 0;
-        border-radius: 8px;
-        text-align: center;
-        box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
-    }
-    .promo-date { color: #00ffcc; font-weight: bold; letter-spacing: 3px; margin-bottom: 10px; }
-    .promo-title { font-size: 2em; margin: 10px 0; color: #fff; }
-    .presave-btn {
-        display: inline-block;
-        background: #00ffcc;
-        color: #050505;
-        padding: 15px 30px;
-        text-decoration: none;
-        font-weight: bold;
-        border-radius: 4px;
-        margin-top: 20px;
-        text-transform: uppercase;
-        transition: 0.3s;
-    }
-    .presave-btn:hover { background: #fff; transform: scale(1.05); }
-</style>
 
-<section class="promo-section">
-    <div class="promo-date">NEW RELEASE: JANUARY 30, 2026</div>
-    <div class="promo-title">"Vene"</div>
-    <p>New Melodic Hard Techno track.</p>
-</section>
-
+        <section class="promo-section">
+            <div class="promo-date">NEW RELEASE: JANUARY 30, 2026</div>
+            <div class="promo-title">"Vene"</div>
+            <p>New Melodic Hard Techno track.</p>
+        </section>
 
         <section class="bio-container">
             <img src="machetebath-profile.jpg" alt="MacheteBath Profile" class="bio-image">
-			<div class="bio-text">
-				<p>MacheteBath is an exploration of rhythmic breaks, cold hardware-driven precision, and soulful, evolving textures.</p>
-				<p>The project focuses on a hybrid production approach, blending the complex world of Eurorack modular synthesis with a collection of vintage and modern hardware synths, classic drum machines, and deep DAW integration. With over 20 years of experience, MacheteBath delivers a sound that is both technically precise and atmospherically rich.</p>
-			</div>
+            <div class="bio-text">
+                <p>MacheteBath is an exploration of rhythmic breaks, cold hardware-driven precision, and soulful, evolving textures.</p>
+                <p>The project focuses on a hybrid production approach, blending Eurorack modular synthesis with vintage hardware synths and drum machines. With over 20 years of experience, MacheteBath delivers a sound that is both technically precise and atmospherically rich.</p>
+            </div>
         </section>
 
         <h3>Connect & Stream</h3>
         <div class="links-grid">
-            <div class="link-card"><a href="https://open.spotify.com/artist/0es3vzclAI6ikDZ9gSI92m?si=b2ZJnk_iSvykjO4KUSy4vA" target="_blank">Spotify</a></div>
+            <div class="link-card"><a href="https://open.spotify.com/artist/machetebath" target="_blank">Spotify</a></div>
             <div class="link-card"><a href="https://music.apple.com/ca/artist/machetebath/1844827568" target="_blank">Apple Music</a></div>
-			<div class="link-card"><a href="https://music.amazon.ca/artists/B0FV8SKZ3Z/machetebath" target="_blank">Amazon Music</a></div>
-			<div class="link-card"><a href="https://machetebath.bandcamp.com/" target="_blank">Bandcamp</a></div>
+            <div class="link-card"><a href="https://machetebath.bandcamp.com/" target="_blank">Bandcamp</a></div>
             <div class="link-card"><a href="https://instagram.com/machetebath" target="_blank">Instagram</a></div>
-            <div class="link-card"><a href="https://mastodon.social/@machetebath" target="_blank">Mastodon</a></div>
-			
         </div>
 
         <section class="music-section">
@@ -103,7 +89,12 @@
         </section>
 
         <footer>
-            <p>&copy; 2026 MacheteBath. All sounds synthesized in-house.</p>
+            <div class="footer-nav">
+                <a href="index.html">Music</a>
+                <a href="models.html">3D Models</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p>© 2026 MacheteBath. All sounds synthesized in-house.</p>
         </footer>
     </div>
 </body>
