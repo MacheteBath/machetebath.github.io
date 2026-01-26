@@ -37,7 +37,7 @@
         nav a:hover, nav a.active { color: var(--neon); }
 
         /* Header */
-        header { text-align: center; padding: 60px 0 40px; }
+        header { text-align: center; padding: 60px 0 40px; width: 100%; }
         h1 { 
             font-size: 3rem; 
             letter-spacing: 12px; 
@@ -62,6 +62,7 @@
             justify-content: center;
             min-height: 400px;
             text-align: center;
+            padding-bottom: 60px;
         }
 
         .contact-card {
@@ -70,6 +71,8 @@
             padding: 60px;
             border-radius: 4px;
             max-width: 600px;
+            width: 100%; /* Ensures it fills container on small screens */
+            box-sizing: border-box; /* Includes padding in width calculation */
             transition: 0.3s;
         }
 
@@ -120,6 +123,29 @@
         .footer-nav { margin-bottom: 20px; }
         .footer-nav a { color: #444; text-decoration: none; margin: 0 15px; }
 
+        /* MOBILE FIXES */
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            
+            h1 { 
+                font-size: 2.2rem; 
+                letter-spacing: 6px; 
+                line-height: 1.2;
+            }
+            .subtitle { font-size: 0.7rem; letter-spacing: 3px; }
+
+            .contact-card {
+                padding: 40px 20px; /* Less padding on mobile */
+            }
+
+            .cta-button {
+                padding: 15px 30px;
+                letter-spacing: 2px;
+                font-size: 0.8rem;
+                width: 100%; /* Full width button on mobile for easier tapping */
+                box-sizing: border-box;
+            }
+        }
     </style>
 </head>
 <body>
