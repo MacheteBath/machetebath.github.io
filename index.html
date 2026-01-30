@@ -11,6 +11,7 @@
             --card-bg: #141414;
             --text-main: #e0e0e0;
             --text-dim: #999;
+            --footer-text: #777;
         }
 
         body { 
@@ -33,7 +34,14 @@
             font-size: 0.75rem; 
             letter-spacing: 3px; 
         }
-        nav a { color: var(--text-dim); text-decoration: none; transition: 0.4s ease; font-weight: 600; }
+        nav a { 
+            color: var(--text-dim); 
+            text-decoration: none; 
+            transition: 0.4s ease; 
+            font-weight: 600; 
+            text-align: center;
+            line-height: 1.2;
+        }
         nav a:hover, nav a.active { color: var(--neon); }
 
         /* Header & Hero */
@@ -57,15 +65,14 @@
             opacity: 0.8;
         }
 
-        /* High-End Promo Box */
-        /* Updated Pro Promo Box */
+        /* Pro Promo Box */
         .promo-section { 
             background: var(--card-bg); 
             border-left: 4px solid var(--neon); 
             padding: 30px; 
             margin-bottom: 80px; 
             display: grid;
-            grid-template-columns: 180px 1fr; /* Space for the 1x1 image */
+            grid-template-columns: 180px 1fr; 
             gap: 30px;
             align-items: center;
             border-radius: 0 8px 8px 0;
@@ -76,36 +83,13 @@
             border: 1px solid #333;
             border-radius: 2px;
             overflow: hidden;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.1);
         }
-        .promo-art img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .promo-art img { width: 100%; height: 100%; object-fit: cover; }
         .promo-content { text-align: left; }
         .promo-date { color: var(--neon); font-size: 0.8rem; letter-spacing: 2px; font-weight: bold; }
         .promo-title { font-size: 2.2rem; margin: 5px 0; color: #fff; font-weight: 800; }
         .promo-section p { margin: 0; color: var(--text-dim); }
-
-        /* Responsive tweak for mobile */
-        @media (max-width: 768px) {
-            .bio-container { grid-template-columns: 1fr; text-align: center; }
-            .links-grid { grid-template-columns: repeat(2, 1fr); }
-            
-            /* Add these rules below to fix the Title cutoff */
-            h1 { 
-                font-size: 2.2rem;     /* Smaller text for mobile */
-                letter-spacing: 6px;   /* Reduced spacing so it fits */
-                line-height: 1.2;
-            }
-            .subtitle {
-                font-size: 0.7rem;
-                letter-spacing: 3px;
-            }
-
-            .promo-section { flex-direction: column; text-align: center; gap: 20px; }
-            .promo-art { width: 180px; margin: 0 auto; }
-        }
 
         /* Bio Layout */
         .bio-container { 
@@ -126,7 +110,7 @@
         .bio-text { font-size: 1.1rem; color: var(--text-dim); }
         .bio-text p { margin-bottom: 25px; }
 
-        /* Links Grid - Modernized */
+        /* Links Grid */
         .section-title { font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; color: #444; margin-bottom: 30px; text-align: center; }
         .links-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #222; border: 1px solid #222; margin-bottom: 100px; }
         .link-card { background: var(--bg); padding: 30px; text-align: center; transition: 0.3s; }
@@ -143,59 +127,70 @@
             background: #000;
         }
 
+        /* Footer Alignment & Color Updates */
         footer { 
             padding: 80px 0 40px; 
             font-size: 0.7rem; 
-            color: #444; 
+            color: var(--footer-text); 
             border-top: 1px solid #111; 
             text-align: center; 
             letter-spacing: 2px;
         }
-        .footer-nav { margin-bottom: 20px; }
-        .footer-nav a { color: #444; text-decoration: none; margin: 0 15px; }
+        .footer-nav { 
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 25px; 
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .footer-nav a { 
+            color: var(--footer-text); 
+            text-decoration: none; 
+            transition: 0.3s;
+        }
+        .footer-nav a:hover { color: var(--neon); }
 
+        /* THE MOBILE FIXES SECTION */
         @media (max-width: 768px) {
-            /* Fix the Title cutoff */
+            .container { padding: 0 20px; }
+            nav { gap: 15px; }
+            nav a { font-size: 0.65rem; letter-spacing: 1px; }
+
             h1 { 
                 font-size: 2.2rem;     
                 letter-spacing: 6px;   
                 line-height: 1.2;
             }
-            .subtitle {
-                font-size: 0.7rem;
-                letter-spacing: 3px;
-            }
+            .subtitle { font-size: 0.7rem; letter-spacing: 3px; }
 
-            /* Fix the Promo Section for mobile */
             .promo-section { 
-                grid-template-columns: 1fr; /* Stack the image on top of the text */
+                grid-template-columns: 1fr; 
                 text-align: center; 
                 padding: 20px;
                 gap: 20px;
             }
-            .promo-art { 
-                width: 160px; 
-                margin: 0 auto; /* Center the artwork */
-            }
+            .promo-art { width: 160px; margin: 0 auto; }
+            .promo-content { text-align: center; }
 
-            /* General layout adjustments */
             .bio-container { grid-template-columns: 1fr; text-align: center; }
             .links-grid { grid-template-columns: repeat(2, 1fr); }
-            .container { padding: 0 20px; }
+            .footer-nav { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <nav>
-            <a href="index.html" class="active">Music</a>
+            <a href="index.html" class="active">MacheteBath<br>Music</a>
+            <a href="artists.html">Community</a>
             <a href="models.html">3D Models</a>
             <a href="contact.html">Contact</a>
         </nav>
 
         <header>
             <h1>MacheteBath</h1>
-			<div class="subtitle">Electronic Music // Modular Synthesis </div>
+            <div class="subtitle">Electronic Music // Modular Synthesis</div>
         </header>
 
         <section class="promo-section">
@@ -203,7 +198,7 @@
                 <img src="pictures/Vene.webp" alt="VENE Cover Art">
             </div>
             <div class="promo-content">
-                <div class="promo-date">UPCOMING RELEASE // JAN 30 2026</div>
+                <div class="promo-date">NEWEST RELEASE // JAN 30 2026</div>
                 <div class="promo-title">VENE</div>
                 <p>Melodic Hard Techno. Available Worldwide.</p>
                 <p>Links Below.</p>
@@ -213,7 +208,7 @@
         <section class="bio-container">
             <img src="pictures/machetebath-profile.jpg" alt="MacheteBath Profile" class="bio-image">
             <div class="bio-text">
-                <p>MacheteBath is an exploration of rhythmic breaks, cold hardware-driven precision, and soulful, evolving textures.</p>
+                <p>MacheteBath is an exploration of fluid techno, rhythmic breaks, hardware-driven precision, and soulful, evolving textures.</p>
                 <p>Blending Eurorack modular synthesis with vintage hardware and deep DAW integration, the project delivers a sound that is both technically precise and atmospherically rich.</p>
             </div>
         </section>
@@ -226,17 +221,12 @@
             <div class="link-card"><a href="https://music.amazon.ca/artists/B0FV8SKZ3Z/machetebath" target="_blank">Amazon</a></div>
             <div class="link-card"><a href="https://instagram.com/machetebath" target="_blank">Instagram</a></div>
             <div class="link-card"><a href="https://mastodon.social/@machetebath" target="_blank">Mastodon</a></div>
-        </div>>
+        </div>
 
         <section class="music-section">
             <div class="section-title">Discography</div>
             <div class="sc-player">
-                <iframe 
-                    width="100%" 
-                    height="450" 
-                    scrolling="no" 
-                    frameborder="no" 
-                    allow="autoplay" 
+                <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" 
                     src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/2034032205&color=%2300ffcc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
                 </iframe>
             </div>
@@ -244,7 +234,8 @@
 
         <footer>
             <div class="footer-nav">
-                <a href="index.html">Music</a>
+                <a href="index.html">MacheteBath<br>Music</a>
+                <a href="artists.html">Community</a>
                 <a href="models.html">3D Models</a>
                 <a href="contact.html">Contact</a>
             </div>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacheteBath | Signal Lost</title>
+    <style>
+        :root {
+            --neon: #00ffcc;
+            --bg: #0a0a0a;
+            --text-main: #e0e0e0;
+        }
+
+        body { 
+            background: var(--bg); 
+            color: var(--text-main); 
+            font-family: 'Inter', sans-serif; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .error-container { padding: 40px; }
+
+        h1 { 
+            font-size: 8rem; 
+            margin: 0; 
+            color: var(--neon); 
+            letter-spacing: -5px;
+            line-height: 1;
+            font-weight: 900;
+            opacity: 0.2;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .status { 
+            text-transform: uppercase; 
+            letter-spacing: 8px; 
+            font-size: 1rem; 
+            color: var(--neon);
+            margin-bottom: 20px;
+        }
+
+        p { 
+            color: #666; 
+            font-family: 'Courier New', monospace; 
+            margin-bottom: 40px;
+        }
+
+        .back-home {
+            display: inline-block;
+            border: 1px solid var(--neon);
+            color: var(--neon);
+            padding: 15px 35px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+
+        .back-home:hover {
+            background: var(--neon);
+            color: var(--bg);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 5rem; }
+            .status { letter-spacing: 4px; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>404</h1>
+
+    <div class="error-container">
+        <div class="status">Signal Lost // Path Invalid</div>
+        <p>The requested hardware address could not be reached.</p>
+        <a href="index.html" class="back-home">Return to Source</a>
+    </div>
+
+</body>
+</html>

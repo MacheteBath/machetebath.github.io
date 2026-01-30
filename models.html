@@ -11,6 +11,7 @@
             --card-bg: #141414;
             --text-main: #e0e0e0;
             --text-dim: #999;
+            --footer-text: #777;
         }
 
         body { 
@@ -33,11 +34,18 @@
             font-size: 0.75rem; 
             letter-spacing: 3px; 
         }
-        nav a { color: var(--text-dim); text-decoration: none; transition: 0.4s ease; font-weight: 600; }
+        nav a { 
+            color: var(--text-dim); 
+            text-decoration: none; 
+            transition: 0.4s ease; 
+            font-weight: 600; 
+            text-align: center;
+            line-height: 1.2;
+        }
         nav a:hover, nav a.active { color: var(--neon); }
 
         /* Header */
-        header { text-align: center; padding: 60px 0 40px; width: 100%; }
+        header { text-align: center; padding: 60px 0 40px; }
         h1 { 
             font-size: 3rem; 
             letter-spacing: 12px; 
@@ -45,7 +53,6 @@
             margin: 0; 
             font-weight: 900;
             color: #fff;
-            display: block;
         }
         .subtitle { 
             font-size: 0.8rem; 
@@ -57,7 +64,6 @@
 
         /* Model Grid & Card */
         .section-title { font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; color: #444; margin: 60px 0 30px; text-align: center; }
-        
         .model-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 100px; }
 
         .model-card {
@@ -73,12 +79,7 @@
         }
         .model-card:hover { border-color: #333; }
 
-        .model-info h2 { 
-            font-size: 1.8rem; 
-            margin: 0 0 15px 0; 
-            color: #fff; 
-            letter-spacing: 1px;
-        }
+        .model-info h2 { font-size: 1.8rem; margin: 0 0 15px 0; color: #fff; letter-spacing: 1px; }
         .model-info p { color: var(--text-dim); margin-bottom: 20px; }
         
         .specs-list {
@@ -91,7 +92,6 @@
         }
         .specs-list li::before { content: "> "; }
 
-        /* Download Button */
         .download-btn {
             display: inline-block;
             background: var(--neon);
@@ -107,7 +107,6 @@
         }
         .download-btn:hover { background: #fff; transform: translateY(-3px); }
 
-        /* 1x1 Image Preview Box */
         .model-preview {
             width: 100%;
             aspect-ratio: 1 / 1; 
@@ -123,57 +122,51 @@
             filter: grayscale(1);
             transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-        .model-card:hover .model-preview img {
-            filter: grayscale(0);
-            transform: scale(1.05);
-        }
+        .model-card:hover .model-preview img { filter: grayscale(0); transform: scale(1.05); }
 
+        /* Footer Updates */
         footer { 
             padding: 80px 0 40px; 
             font-size: 0.7rem; 
-            color: #444; 
+            color: var(--footer-text); 
             border-top: 1px solid #111; 
             text-align: center; 
             letter-spacing: 2px;
         }
-        .footer-nav { margin-bottom: 20px; }
-        .footer-nav a { color: #444; text-decoration: none; margin: 0 15px; }
+        .footer-nav { 
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 25px; 
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .footer-nav a { 
+            color: var(--footer-text); 
+            text-decoration: none; 
+            transition: 0.3s;
+        }
+        .footer-nav a:hover { color: var(--neon); }
 
-        /* MOBILE FIXES */
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
-            
-            h1 { 
-                font-size: 2rem; 
-                letter-spacing: 4px; /* Tighten for mobile so it doesn't bleed off */
-                line-height: 1.1;
-                margin-bottom: 5px;
-            }
+            nav { gap: 15px; }
+            nav a { font-size: 0.65rem; letter-spacing: 1px; }
+            h1 { font-size: 2.2rem; letter-spacing: 4px; line-height: 1.1; }
             .subtitle { font-size: 0.7rem; letter-spacing: 3px; }
-
-            .model-card { 
-                grid-template-columns: 1fr; 
-                padding: 30px 20px; 
-                text-align: center;
-                gap: 30px;
-            }
-            .model-info { order: 2; } /* Put text below image on mobile */
-            .model-preview { 
-                order: 1; 
-                max-width: 300px; 
-                margin: 0 auto; 
-            }
-            .specs-list {
-                display: inline-block;
-                text-align: left; /* Keep the checklist aligned left inside the centered card */
-            }
+            .model-card { grid-template-columns: 1fr; padding: 30px 20px; text-align: center; }
+            .model-info { order: 2; }
+            .model-preview { order: 1; max-width: 300px; margin: 0 auto; }
+            .specs-list { display: inline-block; text-align: left; }
+            .footer-nav { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <nav>
-            <a href="index.html">Music</a>
+            <a href="index.html">MacheteBath<br>Music</a>
+            <a href="artists.html">Community</a>
             <a href="models.html" class="active">3D Models</a>
             <a href="contact.html">Contact</a>
         </nav>
@@ -191,13 +184,12 @@
                     <h2>Roland TB-3 Stand</h2>
                     <p>Ergonomic desktop riser designed for the Aira TB-3 Touch Bassline. Optimizes touch-screen angle and rear-cable clearance.</p>
                     <ul class="specs-list">
-						<li>FORMAT: .ZIP (3MF)</li>
-						<li>COMPATIBILITY: ROLAND AIRA TB-3</li>
-						<li>PRINT TIME: ~4.5 HRS</li>
-					</ul>
+                        <li>FORMAT: .ZIP (3MF)</li>
+                        <li>COMPATIBILITY: ROLAND AIRA TB-3</li>
+                        <li>PRINT TIME: ~4.5 HRS</li>
+                    </ul>
                     <a href="models/TB-3-Stand-Model.zip" class="download-btn" download>Download Package</a>
                 </div>
-                
                 <div class="model-preview">
                     <img src="pictures/TB-3_Satnd.webp" alt="TB-3 Stand Preview">
                 </div>
@@ -206,7 +198,8 @@
 
         <footer>
             <div class="footer-nav">
-                <a href="index.html">Music</a>
+                <a href="index.html">MacheteBath<br>Music</a>
+                <a href="artists.html">Community</a>
                 <a href="models.html">3D Models</a>
                 <a href="contact.html">Contact</a>
             </div>
