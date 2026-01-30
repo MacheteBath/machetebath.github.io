@@ -140,7 +140,15 @@
 
         /* Mobile Fixes */
         @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; letter-spacing: 6px; }
+            .container { padding: 0 20px; }
+            nav { gap: 15px; }
+            nav a { font-size: 0.65rem; letter-spacing: 1px; }
+            h1 { 
+                font-size: 2.2rem; 
+                letter-spacing: 4px; /* Reduced to prevent screen overflow */
+                word-wrap: break-word;
+            }
+            .subtitle { font-size: 0.7rem; letter-spacing: 2px; }
             .artist-header { flex-direction: column; gap: 5px; }
             .cta-button { width: 100%; box-sizing: border-box; }
             .footer-nav { flex-direction: column; gap: 15px; }
