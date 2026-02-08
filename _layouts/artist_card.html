@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<header>
+    <h1>Spotlight</h1>
+    <div class="subtitle">Supporting Independent Artists</div>
+</header>
+
+<div class="section-title">Current Rotation</div>
+
+{% for artist in site.artists %}
+<article class="artist-card">
+    <div class="artist-header">
+        <span class="artist-name">{{ artist.name }}</span>
+        <span class="track-title">{{ artist.track_title }}</span>
+    </div>
+    <div class="artist-blurb">
+        {{ artist.content }}
+    </div>
+    
+    <div class="sc-player">
+        <iframe 
+            width="100%" 
+            height="166" 
+            scrolling="no" 
+            frameborder="no" 
+            allow="autoplay" 
+            src="https://w.soundcloud.com/player/?url={{ artist.sc_url }}&color=%2300ffcc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false">
+        </iframe>
+    </div>
+</article>
+{% endfor %}
+
+<section class="submission-box">
+    <h3>Submit Your Sound</h3>
+    <p>I am always looking for new artists to feature, and connect with. I focus mostly on electronic music, but I will review all genres for submissions.<br><br>Ensure the subject line is exactly as requested below.</p>
+    <a href="mailto:machetebath@gmail.com?subject=submission to MachetBath artist site&body=SoundCloud Link: " class="cta-button">
+        Submit Track via Email
+    </a>
+</section>

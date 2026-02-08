@@ -1,0 +1,17 @@
+title: MacheteBath
+description: Electronic Music // Modular Synthesis // Ottawa Community
+url: "https://machetebath.github.io"
+baseurl: ""
+
+# This ensures Jekyll looks for your artist profiles in the _artists folder
+collections:
+  artists:
+    output: true
+    permalink: /community/:path/
+
+# This excludes files you don't want uploaded to the live site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

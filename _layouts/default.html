@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | MacheteBath</title>
+    
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+        <rect width='100' height='100' fill='%230a0a0a'/>
+        <text y='50%' x='50%' dy='.35em' font-family='Arial, sans-serif' font-weight='900' font-size='60' text-anchor='middle' fill='%2300ffcc'>
+        MB</text></svg>">
+        
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+			<a href="/" class="{% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">MacheteBath<br>Music</a>
+			<a href="/artists.html" class="{% if page.url contains 'artists' %}active{% endif %}">Community</a>
+			<a href="/models.html" class="{% if page.url contains 'models' %}active{% endif %}">3D Models</a>
+			<a href="/contact.html" class="{% if page.url contains 'contact' %}active{% endif %}">Contact</a>
+		</nav>
+
+        {{ content }}
+
+        <footer>
+            <div class="footer-nav">
+                <a href="/index.html">MacheteBath<br>Music</a>
+                <a href="/artists.html">Community</a>
+                <a href="/models.html">3D Models</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+            <p>© 2026 MACHETEBATH. ALL SOUNDS SYNTHESIZED IN-HOUSE.</p>
+        </footer>
+    </div>
+</body>
+</html>
