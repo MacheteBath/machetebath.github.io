@@ -9,7 +9,9 @@ title: Community
 </header>
 
 <div class="artist-list">
-  {% for artist in site.artists %}
+  {% assign sorted_artists = site.artists | sort: 'date' | reverse %}
+  
+  {% for artist in sorted_artists %}
     <div class="artist-card">
         <div class="artist-header">
             <span class="artist-name">{{ artist.name }}</span>
@@ -31,10 +33,10 @@ title: Community
     <div class="submit-card">
         <div class="section-title">Submit Your Sound</div>
         <p>I am always looking for new artists to feature, and connect with. 
-			I focus mostly on electronic music, but I will review all genres for submissions.
-			To submit, please provide a SoundCloud link to your track, and tell me a bit about your process.
-			Ensure the subject line is "Sound Submission" and to provide a link to your track in the body of the email.
-		</p>
+            I focus mostly on electronic music, but I will review all genres for submissions.
+            To submit, please provide a SoundCloud link to your track, and tell me a bit about your process.
+            Ensure the subject line is "Sound Submission" and to provide a link to your track in the body of the email.
+        </p>
         <a href="mailto:machetebath@gmail.com" class="cta-button">Submit Your Sound Click Here!</a>
     </div>
 </section>
