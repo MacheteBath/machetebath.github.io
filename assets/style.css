@@ -120,7 +120,19 @@ h1 {
 
 /* --- Artist Cards --- */
 .artist-card { background: var(--card-bg); border: 1px solid #222; padding: 30px; margin-bottom: 40px; border-radius: 4px; }
-.artist-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 15px; border-bottom: 1px solid #222; padding-bottom: 10px; }
+
+/* FIX: Added flex-wrap and gap to prevent artist/track name overlap */
+.artist-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: baseline; 
+    margin-bottom: 15px; 
+    border-bottom: 1px solid #222; 
+    padding-bottom: 10px;
+    flex-wrap: wrap; 
+    gap: 15px; 
+}
+
 .artist-name { font-size: 1.5rem; color: #fff; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 .track-title { color: var(--neon); font-family: 'Courier New', monospace; font-size: 0.9rem; }
 .artist-blurb { color: var(--text-dim); font-size: 1rem; margin-bottom: 25px; font-style: italic; }
@@ -140,22 +152,22 @@ h1 {
 .model-info h2 { color: #fff; text-transform: uppercase; letter-spacing: 2px; margin-top: 0; }
 .specs-list { list-style: none; padding: 0; margin: 25px 0; font-family: 'Courier New', monospace; font-size: 0.8rem; color: var(--neon); }
 .specs-list li { margin-bottom: 8px; border-bottom: 1px solid #222; padding-bottom: 4px; }
-/* Restoring the B&W to Color transition */
 .model-preview img {
     width: 100%;
-    max-width: 450px;       /* Keeps it from getting too huge on mobile transition */
+    max-width: 450px;
     display: block;
-    margin: 0 auto;        /* Centers it when it's the only thing in the row */
+    margin: 0 auto;
     border-radius: 2px;
     border: 1px solid #333;
-    filter: grayscale(1);  /* Starts Black and White */
+    filter: grayscale(1);
     transition: 0.5s ease;
 }
 
 .model-card:hover .model-preview img {
-    filter: grayscale(0);  /* Turns to color on hover */
+    filter: grayscale(0);
     border-color: var(--neon);
 }
+
 /* --- Forms & Buttons --- */
 .submit-section { text-align: center; padding: 60px 0 100px; }
 .submit-card {
@@ -209,11 +221,13 @@ footer { padding: 80px 0 40px; font-size: 0.7rem; color: var(--footer-text); bor
     .bio-container { grid-template-columns: 1fr; text-align: center; }
     .links-grid { grid-template-columns: repeat(2, 1fr); }
     
-    /* ADDED THESE TWO RULES BELOW */
     .model-card { grid-template-columns: 1fr; padding: 25px; text-align: center; }
-    .model-preview img { max-width: 280px; } /* This keeps the stand from being huge on phones */
+    .model-preview img { max-width: 280px; }
     
     .model-preview { order: -1; margin-bottom: 20px; }
     .footer-nav { flex-direction: column; gap: 15px; }
     .submit-card, .contact-card { padding: 30px; }
+
+    /* MOBILE HEADER FIX: Ensures track title takes full width and aligns right when stacked */
+    .track-title { width: 100%; text-align: right; margin-top: 5px; }
 }

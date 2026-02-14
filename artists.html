@@ -18,7 +18,7 @@ title: Community
             <span class="track-title">{{ artist.track_title }}</span>
         </div>
         <div class="artist-blurb">
-            {{ artist.content }}
+            {{ artist.content | markdownify }}
         </div>
         <div class="sc-player-small">
             <iframe width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay" 
