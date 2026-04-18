@@ -45,21 +45,33 @@ Before pushing to GitHub, make sure it looks right:
 	3. Go to http://127.0.0.1:4000/ in your browser and check the Spotlight page.
 
 
-4. Sync and Cleanup
-Once the merge is complete on GitHub, clean up your local environment:
+3. Merge into Main
+Now that your work is "safe" on the branch, you need to move it into the main branch, which is what GitHub Pages actually displays to the world.
 
-Switch back to main:
+Bash
+# Switch your local view back to the main branch
 git checkout main
 
-Pull the changes:
+# Pull any changes that might have happened on GitHub while you were working
 git pull origin main
 
-Delete the branch:
+# Combine the work from your feature branch into main
+git merge feature/add-artist
+
+# Upload the updated main branch to GitHub to trigger the website update
+git push origin main
+4. Cleanup
+Once the merge is successful and you see your website update, you can delete the temporary branch to keep your workspace clean.
+
+Bash
+# Delete the local branch
 git branch -d feature/add-artist
 
-Prune remote references:
+# Prune your list so it matches GitHub's clean state
 git fetch -p
-
+Pro-Tip for Git Bash
+If you ever get "lost" and aren't sure which branch you are on, just type:
+git status
 5. Confirm on the Site
 Wait about 30–60 seconds for GitHub Actions to finish building, then refresh machetebath.github.io/artists to see the new spotlight entry at the top of the list.
 
