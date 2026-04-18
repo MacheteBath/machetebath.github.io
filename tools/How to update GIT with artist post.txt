@@ -25,7 +25,7 @@ The artist's bio text is here...
 To ensure everything is working and your main branch stays stable, use a temporary branch:
 
 Create a new branch:
-git checkout -b feature/add-artist
+ 
 
 Stage and Commit:
 git add .
@@ -34,6 +34,16 @@ git commit -m "Add [Artist Name] to spotlight via script"
 Push and Merge:
 git push origin feature/add-artist
 Go to GitHub, open a Pull Request, and merge it into main.
+
+4. Test Locally
+Before pushing to GitHub, make sure it looks right:
+
+	1. Open your terminal in the project folder.
+
+	2. Run: bundle exec jekyll serve
+
+	3. Go to http://127.0.0.1:4000/ in your browser and check the Spotlight page.
+
 
 4. Sync and Cleanup
 Once the merge is complete on GitHub, clean up your local environment:
