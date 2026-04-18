@@ -1,0 +1,56 @@
+1. Run the Python Script
+Open your terminal in your website tools directory and run your script.
+
+Command: python3 extract_sc.py
+
+Input: The script will prompt for the embed code link to extract the information.
+
+Automation: The script will automatically generate the correctly formatted .md file with the current date and place it in the _artists/ directory.
+
+2. Verify the New File
+Check the _artists/ folder to ensure the file was created correctly. It should look like this:
+
+Markdown
+---
+name: "Artist Name"
+track_title: "Song Title"
+sc_url: "https://api.soundcloud.com/tracks/123456789"
+date: 2026-04-17
+---
+The artist's bio text is here...
+
+
+
+3. Git Workflow (Safe Update)
+To ensure everything is working and your main branch stays stable, use a temporary branch:
+
+Create a new branch:
+git checkout -b feature/add-artist
+
+Stage and Commit:
+git add .
+git commit -m "Add [Artist Name] to spotlight via script"
+
+Push and Merge:
+git push origin feature/add-artist
+Go to GitHub, open a Pull Request, and merge it into main.
+
+4. Sync and Cleanup
+Once the merge is complete on GitHub, clean up your local environment:
+
+Switch back to main:
+git checkout main
+
+Pull the changes:
+git pull origin main
+
+Delete the branch:
+git branch -d feature/add-artist
+
+Prune remote references:
+git fetch -p
+
+5. Confirm on the Site
+Wait about 30–60 seconds for GitHub Actions to finish building, then refresh machetebath.github.io/artists to see the new spotlight entry at the top of the list.
+
+Did you want me to look at the Python script code itself to see if we can automate the Git commands directly into the script?
