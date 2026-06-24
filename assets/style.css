@@ -70,6 +70,13 @@ h1 {
     align-items: center;
     border-radius: 0 8px 8px 0;
 }
+
+/* --- Multi-Release Spacing --- */
+.upcoming-release {
+    margin-bottom: 40px; /* Reduces the gap slightly between the two promo blocks */
+    border-left-color: #ffffff; /* Gives upcoming section a distinct clean white accent */
+}
+
 .promo-art {
     width: 100%;
     aspect-ratio: 1 / 1;
