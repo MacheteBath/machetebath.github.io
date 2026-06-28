@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --neon: #00ffcc;
     --bg: #0a0a0a;
@@ -71,6 +75,17 @@ h1 {
     border-radius: 0 8px 8px 0;
 }
 
+/* --- Interactive Promo Card Enhancements --- */
+.interactive-promo {
+    cursor: pointer;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.interactive-promo:hover {
+    transform: translateY(-2px);
+    border-color: var(--neon);
+    box-shadow: 0 5px 20px rgba(0, 255, 204, 0.05);
+}
+
 /* --- Multi-Release Spacing --- */
 .upcoming-release {
     margin-bottom: 40px; /* Reduces the gap slightly between the two promo blocks */
@@ -123,6 +138,11 @@ h1 {
     overflow: hidden; 
     border: 1px solid #222;
     background: #000;
+}
+
+/* Smooth Scroll Layout Target Anchor Buffer */
+#discography {
+    scroll-margin-top: 50px;
 }
 
 /* --- Artist Cards --- */
