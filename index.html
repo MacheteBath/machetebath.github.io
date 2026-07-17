@@ -8,34 +8,47 @@ title: Official Artist Page
     <div class="subtitle">Electronic Music // Modular Synthesis</div>
 </header>
 
-<!-- ================= UPCOMING RELEASE ================= -->
-<section class="promo-section upcoming-release">
-    <div class="promo-art">
-        <img src="pictures/BSU-MacheteBath.webp" alt="BSU Cover Art">
-    </div>
-    <div class="promo-content">
-        <div class="promo-date">UPCOMING RELEASE // JULY 17 2026</div>
-        <div class="promo-title">BSU</div>
-        <p>Oldschool Jungle. Rollin' chaotic breaks.</p>
-        <p>Coming Soon.</p>
-    </div>
-</section>
+{% assign releases_sorted = site.releases | sort: 'date' | reverse %}
 
-<!-- ================= LATEST RELEASE (SMOOTH SCROLL LINK) ================= -->
-<a href="#discography" style="text-decoration: none; display: block; color: inherit;">
-    <section class="promo-section interactive-promo">
+<!-- ================= UPCOMING RELEASES ================= -->
+{% for release in releases_sorted %}
+  {% if release.date > site.time %}
+    <section class="promo-section upcoming-release">
         <div class="promo-art">
-            <img src="pictures/Vene.webp" alt="VENE Cover Art">
+            <img src="{{ release.art }}" alt="{{ release.title }} Cover Art">
         </div>
         <div class="promo-content">
-            <div class="promo-date">LATEST RELEASE // JAN 30 2026</div>
-            <div class="promo-title">VENE</div>
-            <p>Melodic Hard Techno. Available Worldwide.</p>
-            <p style="color: var(--neon); font-size: 0.85rem; margin-top: 10px; letter-spacing: 1.5px; font-weight: bold; text-transform: uppercase;">↓ Click to Listen</p>
+            <div class="promo-date">UPCOMING RELEASE // {{ release.date | date: "%b %d %Y" | upcase }}</div>
+            <div class="promo-title">{{ release.title }}</div>
+            <p>{{ release.genre }}. {{ release.content | strip_html | strip_newlines }}</p>
+            <p>Coming Soon.</p>
         </div>
     </section>
-</a>
+  {% endif %}
+{% endfor %}
 
+<!-- ================= LATEST RELEASE (SMOOTH SCROLL LINK) ================= -->
+{% assign latest_found = false %}
+{% for release in releases_sorted %}
+  {% if release.date <= site.time and latest_found == false %}
+    <a href="#discography" style="text-decoration: none; display: block; color: inherit;">
+        <section class="promo-section interactive-promo">
+            <div class="promo-art">
+                <img src="{{ release.art }}" alt="{{ release.title }} Cover Art">
+            </div>
+            <div class="promo-content">
+                <div class="promo-date">LATEST RELEASE // {{ release.date | date: "%b %d %Y" | upcase }}</div>
+                <div class="promo-title">{{ release.title }}</div>
+                <p>{{ release.genre }}. {{ release.content | strip_html | strip_newlines }}</p>
+                <p style="color: var(--neon); font-size: 0.85rem; margin-top: 10px; letter-spacing: 1.5px; font-weight: bold; text-transform: uppercase;">↓ Click to Listen</p>
+            </div>
+        </section>
+    </a>
+    {% assign latest_found = true %}
+  {% endif %}
+{% endfor %}
+
+<!-- ================= BIO ================= -->
 <section class="bio-container">
     <img src="pictures/machetebath-profile.jpg" alt="MacheteBath Profile" class="bio-image">
     <div class="bio-text">
@@ -44,6 +57,7 @@ title: Official Artist Page
     </div>
 </section>
 
+<!-- ================= CONNECTIVITY ================= -->
 <div class="section-title">Connectivity</div>
 <div class="links-grid">
     <div class="link-card"><a href="https://open.spotify.com/artist/0es3vzclAI6ikDZ9gSI92m?si=b2ZJnk_iSvykjO4KUSy4vA" target="_blank">Spotify</a></div>
