@@ -8,6 +8,8 @@ collections:
   artists:
     output: true
     permalink: /community/:path/
+  releases:
+    output: false
 
 # This excludes files you don't want uploaded to the live site
 exclude:
